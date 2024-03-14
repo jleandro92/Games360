@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulario"
+    android:background="@color/midnughtblue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_editor_absoluteY="1dp"
+        app:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/editJogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nome do Jogo"
+            android:inputType="text"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"/>
+
+        <EditText
+            android:id="@+id/editAno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ano de Lançamento"
+            android:inputType="datetime"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"/>
+
+        <EditText
+            android:id="@+id/editGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Gênero do Jogo"
+            android:inputType="text"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"/>
+
+        <EditText
+            android:id="@+id/editDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Descrição"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"/>
+
+        <Button
+            android:id="@+id/btnFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="15dp"
+            android:text="Capture"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="150dp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="196dp"
+            android:layout_height="226dp"/>
+
+        <Button
+            android:id="@+id/btnPoli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="15dp"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/darkred"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="20dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/xbox"
+            android:layout_marginBottom="25dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,7 @@ public class GamesDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        String game = "CREATE TABLE game(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nomeGame TEXT NOT NULL, ano INTEGER, genero TEXT, desc TEXT);";
+        String game = "CREATE TABLE game(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nomeGame TEXT NOT NULL, ano INTEGER, genero TEXT, descricao TEXT, imagePath TEXT);";
         db.execSQL(game);
     }
 
@@ -32,14 +32,13 @@ public class GamesDB extends SQLiteOpenHelper {
         db.execSQL(game);
     }
 
-
     public void salvarGame(Games jogos){
         ContentValues values = new ContentValues();
 
         values.put("nomeGame", jogos.getNomeGame());
         values.put("ano", jogos.getAno());
         values.put("genero", jogos.getGenero());
-        values.put("desc", jogos.getDesc());
+        values.put("desc", jogos.getDescricao());
 
         getWritableDatabase().insert("game", null, values);
     }
@@ -50,7 +49,7 @@ public class GamesDB extends SQLiteOpenHelper {
         values.put("nomeGame", jogos.getNomeGame());
         values.put("ano", jogos.getAno());
         values.put("genero", jogos.getGenero());
-        values.put("desc", jogos.getDesc());
+        values.put("desc", jogos.getDescricao());
 
         String [] args = {jogos.getId().toString()};
         getWritableDatabase().update("game", values,"id=?", args);
@@ -72,7 +71,7 @@ public class GamesDB extends SQLiteOpenHelper {
             jogo.setNomeGame(cursor.getString(1));
             jogo.setAno(cursor.getInt(2));
             jogo.setGenero(cursor.getString(3));
-            jogo.setDesc(cursor.getString(4));
+            jogo.setDescricao(cursor.getString(4));
 
             jogos.add(jogo);
 

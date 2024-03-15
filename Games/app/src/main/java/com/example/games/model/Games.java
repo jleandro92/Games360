@@ -7,12 +7,7 @@ public class Games implements Serializable{
      private String nomeGame;
      private int ano;
      private String genero;
-     private String desc;
-
-    public String toString(){
-        return "Game: " + nomeGame + "\n" +
-                "Lançamento: " + ano;
-    }
+     private String descricao;
 
     public Long getId() {
         return id;
@@ -46,11 +41,13 @@ public class Games implements Serializable{
         this.genero = genero;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescricao(String desc) {
+        this.descricao = desc;
     }
+
+
 }

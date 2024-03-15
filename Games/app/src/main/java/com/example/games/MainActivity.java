@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 import com.example.games.BDHelper.GamesDB;
 import com.example.games.model.Games;
+import com.example.games.model.GamesAdapter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     ListView lista;
     GamesDB bdHelper;
     ArrayList<Games> listGame;
-    ArrayAdapter adapter;
-
+    //ArrayAdapter adapter;
     Games jogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button btnCad = (Button) findViewById(R.id.btnCad);
         btnCad.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
         lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapter, View view, int position, long id) {
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
     @Override
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -94,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
         listGame = bdHelper.getLista();
         bdHelper.close();
 
-        if (listGame !=null){
-           adapter = new ArrayAdapter<Games>(MainActivity.this, android.R.layout.simple_expandable_list_item_1,listGame);
-           lista.setAdapter(adapter);
+        if (listGame != null){
+            GamesAdapter adapter = new GamesAdapter(MainActivity.this, listGame);
+            lista.setAdapter(adapter);
         }
     }
+
 }
